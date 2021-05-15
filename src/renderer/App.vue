@@ -42,7 +42,7 @@ export default {
 @import "~@/assets/font/font.css";
 @import "~@/assets/scss/global.scss";
 @import "~@/assets/scss/app.scss";
-html{
+html,body{
   height: 100vh;
   overflow: hidden;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="gui-home">
     <query />
   </div>
 </template>
@@ -19,4 +19,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+#gui-home {
+
+}
 </style>

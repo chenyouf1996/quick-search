@@ -1,20 +1,29 @@
 <template>
   <div id="query-wrapper">
     <!-- 带提示的输入框 -->
-    <el-autocomplete
-      v-if="!settingDialogVisible"
-      placeholder="查询头 + 关键字，如：bd abc"
-      @keydown.enter.native="searchHandler"
-      ref="queryRef"
-      :fetch-suggestions="queryAsync"
-      :debounce="1000"
-      :trigger-on-focus="false"
-      v-model="query"
-      @focus="autocompleteInputFocus"
-      @blur="autocompleteInputBlur"
+    <transition
+      leave-active-class="animated fadeIn"
+      :duration="500"
     >
-      <el-button slot="append" icon="el-icon-setting" @click="settingHandler" />
-    </el-autocomplete>
+      <el-autocomplete
+        v-show="!settingDialogVisible"
+        placeholder="查询头 + 关键字，如：bd abc"
+        @keydown.enter.native="searchHandler"
+        ref="queryRef"
+        :fetch-suggestions="queryAsync"
+        :debounce="1000"
+        :trigger-on-focus="false"
+        v-model="query"
+        @focus="autocompleteInputFocus"
+        @blur="autocompleteInputBlur"
+      >
+        <el-button
+          slot="append"
+          icon="el-icon-setting"
+          @click="settingHandler"
+        />
+      </el-autocomplete>
+    </transition>
     <setting-dialog />
   </div>
 </template>
@@ -113,9 +122,6 @@ export default {
       TempUtils.setWindowContentSize(600, 600)
     },
     async autocompleteInputBlur () {
-      // await TempUtils.sleep(700)
-      // this.callback && this.callback(this.queryResult)
-      // this.queryResult = []
       TempUtils.setWindowContentSize(600, 40)
     },
     settingHandler () {

@@ -1,29 +1,53 @@
 <template>
-  <transition-group enter-active-class="animated fadeInRight">
-    <el-dialog
-      title="查询头设置"
-      :visible.sync="settingDialogVisible"
-      width="70%"
-      class="setting-dialog"
-      :key="Date.now()">
-      <!-- 查询配置表格 -->
-      <el-table :data="queryConfigList" stripe size="small" height="70vh">
-        <el-table-column prop="label" label="查询名称" width="210"></el-table-column>
-        <el-table-column prop="queryHeader" label="查询头" width="210"></el-table-column>
-        <el-table-column label="操作">
-          <template slot-scope="scope">
-            <el-button type="text" size="small" @click="modifyClickHandler(scope)">修改</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-      <!-- 修改查询头弹窗 -->
-      <modify-dialog
-        :queryListIndex="queryListIndex"
-        :currentQueryHeader="currentQueryHeader"
-        :queryLabel="queryLabel"
-      />
-    </el-dialog>
-  </transition-group>
+  <!-- <transition-group enter-active-class="animated fadeIn"> -->
+  <el-dialog
+    :modal="false"
+    title="查询头设置"
+    :visible.sync="settingDialogVisible"
+    width="70%"
+    class="setting-dialog"
+    :key="Date.now()"
+  >
+    <!-- 查询配置表格 -->
+    <el-table :data="queryConfigList" stripe size="small" height="70vh">
+      <el-table-column
+        prop="label"
+        label="查询名称"
+        width="210"
+      ></el-table-column>
+      <el-table-column
+        prop="queryHeader"
+        label="查询头"
+        width="210"
+      ></el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-dropdown :hide-on-click="false" trigger="click">
+            <span class="el-dropdown-link">
+              <el-button
+                type="text"
+                size="small"
+                @click="modifyClickHandler(scope)"
+                >修改
+              </el-button>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>
+                <!-- 修改查询头弹窗 -->
+                <modify-dialog
+                  :queryListIndex="queryListIndex"
+                  :currentQueryHeader.sync="currentQueryHeader"
+                  :queryLabel="queryLabel"
+                />
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </template>
+      </el-table-column>
+    </el-table>
+  </el-dialog>
+
+  <!-- </transition-group> -->
 </template>
 
 <script>
