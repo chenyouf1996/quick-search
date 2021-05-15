@@ -121,8 +121,9 @@ export default {
     autocompleteInputFocus () {
       TempUtils.setWindowContentSize(600, 600)
     },
-    async autocompleteInputBlur () {
+    autocompleteInputBlur () {
       TempUtils.setWindowContentSize(600, 40)
+      this.$refs.queryRef.close()
     },
     settingHandler () {
       dispatch(DialogSetters.SETTING_DIALOG, true)
