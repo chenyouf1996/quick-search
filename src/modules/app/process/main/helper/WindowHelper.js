@@ -18,6 +18,7 @@ import AppEvents from 'modules/app/enum/AppEvents'
 import WindowUtils from 'modules/app/utils/WindowUtils'
 import EnvTypes from 'modules/app/enum/EnvTypes'
 import fs from 'fs'
+import MainEvents from 'general/enum/MainEvents'
 const LAST_FOCUS = WindowPropertys.LAST_FOCUS
 const IPC_ID = WindowPropertys.IPC_ID
 const SESSION = WindowPropertys.SESSION
@@ -160,6 +161,9 @@ class WindowHelper extends BaseHelper {
       event.preventDefault()
       // win.minimize()
       emit(AppEvents.GUI_WANT_CLOSE, null, win) // todo fang 这里绕了一大圈 可以只使用 emit(MainEvents.CLOSE_WINDOW, win[SESSION]) 但是出现了耦合
+    })
+    win.on('blur', event => {
+      emit(MainEvents.WINDOW_HIDE)
     })
   }
   createWindowByType (type, windowSession) { // 负责渲染的窗体
