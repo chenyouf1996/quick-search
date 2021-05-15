@@ -1,0 +1,47 @@
+{
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": { "node": 7 }
+        }],
+        "stage-0"
+      ],
+      "plugins": ["istanbul"]
+    },
+    "main": {
+      "presets": [
+        ["env", {
+          "targets": { "node": 7 }
+        }],
+        "stage-0"
+      ]
+    },
+    "renderer": {
+      "presets": [
+        ["env", {
+          "modules": false
+        }],
+        "stage-0"
+      ],
+      "plugins":[
+        "jsx-v-model",
+        "transform-vue-jsx"
+      ]
+    },
+    "web": {
+      "presets": [
+        ["env", {
+          "modules": false
+        }],
+        "stage-0"
+      ],
+      "plugins":[
+        "jsx-v-model",
+        "transform-vue-jsx"
+      ]
+    }
+  },
+  "plugins": ["transform-runtime"]
+}

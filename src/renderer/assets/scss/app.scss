@@ -1,0 +1,161 @@
+/* 这里用来存放共用的css样式 */
+* {
+  -webkit-user-select: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  ::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius: 1em;
+    background-color: rgba(50,50,50,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius: 1em;
+    background-color: rgba(50,50,50,.1);
+  }
+}
+
+.el-dialog__header {
+  padding: $global-gap;
+}
+.el-dialog__body {
+  padding: 0 $global-gap $global-gap $global-gap;
+  .scroll-div {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden
+  }
+}
+.el-checkbox, .el-switch__label {
+  font-weight: normal;
+}
+.el-dialog__headerbtn {
+  position: absolute;
+  top: $global-gap;
+  right: $global-gap;
+}
+.el-dialog__footer {
+  padding: 0 $global-gap $global-gap $global-gap;
+}
+.el-message-box {
+  padding: $global-gap;
+  .el-message-box__header {
+    padding: 0px;
+  }
+  .el-message-box__content {
+    padding: 0px;
+  }
+  .el-message-box__message {
+    padding-top: $global-gap;
+    p{
+      line-height: 1;
+    }
+  }
+  .el-message-box__btns {
+    padding: 0px;
+    padding-top: $global-gap;
+  }
+  .el-message-box__input {
+    padding: 0px;
+    padding-top: $global-gap;
+  }
+  .el-message-box__errormsg {
+    display: none
+  }
+  .el-message-box__headerbtn {
+    right: 0px;
+    top: - $global-gap;
+    bottom: -5px;
+  }
+  .el-message-box__status {
+    margin-top: 5px;
+  }
+}
+.el-popover{
+  padding: $global-gap;
+  p:first-child {
+    margin-top: 0px;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+}
+#chart-dialog{
+  .el-dialog__body {
+    display: flex;
+    $calcHeight: 65px + $global-gap * 2; 
+    height: calc(100% -  #{$calcHeight});
+  }
+  p {
+    @include vertical-center
+  }
+  .icon{
+    width: 1rem;
+    height: 1rem;
+  }
+  .el-dialog{
+    width: 1300px;
+    height: 900px;
+    margin-top: 45px!important;
+  }
+  .chart-info {
+    padding-left: 5px;
+  }
+  .echarts {
+    width: 100%!important;
+    flex-shrink: 0;
+    height: 100%!important;
+  }
+  .search-tooltip-div{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+// 颜色标识
+
+.lgcopt-xor {
+  color: #909399;
+}
+.lgcopt-or {
+  color: #67c23a;
+}
+.lgcopt-and {
+  color: #e6a23c;
+} 
+.normal {
+  color: #409EFF;
+}
+.search-stop {
+  color: #f56c6c;
+}
+.input-empty {
+  color: #909399;
+}
+.search-not {
+  font-weight: 200;
+  padding: 1px 3px;
+  color: #fff;
+  background-color: #e6a23c;
+  border-radius: 3px;
+}
+.el-popover {
+  max-width: 400px;
+}
+.el-input-group__prepend {
+  padding: $global-gap;
+  background-color: #fff;
+  font-size: 12px;
+}
+.el-dialog__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .el-dialog {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

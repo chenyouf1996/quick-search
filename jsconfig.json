@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/renderer/*", "./src/main/*"],
+      "general/*": ["./src/general/*"],
+      "app/*": ["./src/app/*"],
+      "modules/*": ["./src/modules/*"]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+$global-gap: 10px;
+@mixin flex { 
+  display: flex;
+}
+@mixin horizontally-center {
+  display: flex;
+  justify-content: center;
+}
+@mixin vertical-center {
+  display: flex;
+  align-items: center;
+}
+@mixin center-flex { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

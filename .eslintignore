@@ -1,0 +1,7 @@
+test/unit/coverage/**
+test/unit/*.js
+test/e2e/*.js
+src/index.ejs
+dist/**
+build/**
+dist/electron/*.js

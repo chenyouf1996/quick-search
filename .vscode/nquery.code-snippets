@@ -1,0 +1,18 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "nquery",
+		"body": [
+			"import BaseQuery from '@/gui/query/BaseQuery'",
+			"import QueryTypes from 'general/enum/QueryTypes'",
+			"class ${TM_FILENAME_BASE} extends BaseQuery {",
+			"\ttype = ${0}",
+			"\tlabel = '${1}'",
+			"\tquery = `${2}`",
+			"}",
+			"export default ${TM_FILENAME_BASE}",
+			""
+		],
+		"description": "查询模板"
+	}
+}
