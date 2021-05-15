@@ -11,7 +11,7 @@ import LogicHome from '@/logic/components/LogicHome'
 import ProcessTypes from 'modules/app/enum/ProcessTypes'
 import ISO from 'modules/app/ISO'
 export default {
-  name: 'cyf-search',
+  name: 'quick-search',
   components: {
     GUIHome,
     LogicHome

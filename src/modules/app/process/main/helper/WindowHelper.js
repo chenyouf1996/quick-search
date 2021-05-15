@@ -170,7 +170,7 @@ class WindowHelper extends BaseHelper {
     let options
     if (type === ProcessTypes.GUI) {
       options = {
-        title: 'cyf-search',
+        title: 'quick-search',
         width: 600,
         height: 40,
         resizable: false,

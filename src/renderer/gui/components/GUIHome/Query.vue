@@ -3,7 +3,6 @@
     <!-- 带提示的输入框 -->
     <transition
       leave-active-class="animated fadeIn"
-      :duration="500"
     >
       <el-autocomplete
         v-show="!settingDialogVisible"
