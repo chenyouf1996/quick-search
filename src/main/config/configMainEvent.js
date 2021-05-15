@@ -21,6 +21,7 @@ import CreateWindowMevt from '@/event/CreateWindowMevt'
 import WindowShowMevt from '@/event/WindowShowMevt'
 import WindowHideMevt from '@/event/WindowHideMevt'
 import WindowCenterMevt from '@/event/WindowCenterMevt'
+import ShortcutMevt from '@/event/ShortcutMevt'
 
 let list = [
   [AppEvents.MAIN_APP_READY, AppReadyMevt],
@@ -44,7 +45,8 @@ let list = [
   [MainEvents.WINDOW_SHOW, WindowShowMevt],
   [MainEvents.WINDOW_HIDE, WindowHideMevt],
   [MainEvents.WINDOW_HIDE, WindowHideMevt],
-  [MainEvents.WINDOW_CENTER, WindowCenterMevt]
+  [MainEvents.WINDOW_CENTER, WindowCenterMevt],
+  [MainEvents.SHORTCUT, ShortcutMevt]
 ]
 let configMainEvent = new Map(list)
 export default configMainEvent

@@ -1,22 +1,20 @@
 <template>
   <div id="query-wrapper">
     <!-- 带提示的输入框 -->
-    <transition
-      enter-active-class="animated fadeInRight"
-      leave-active-class="animated fadeInLeft">
-      <el-autocomplete
-        placeholder="查询头 + 关键字，如：bd abc"
-        @keydown.enter.native="searchHandler"
-        ref="queryRef"
-        :fetch-suggestions="queryAsync"
-        :debounce="1000"
-        :trigger-on-focus="false"
-        v-model="query"
-        @focus="autocompleteInputFocus"
-        @blur="autocompleteInputBlur">
-        <el-button slot="append" icon="el-icon-setting" @click="settingHandler" />
-      </el-autocomplete>
-    </transition>
+    <el-autocomplete
+      v-if="!settingDialogVisible"
+      placeholder="查询头 + 关键字，如：bd abc"
+      @keydown.enter.native="searchHandler"
+      ref="queryRef"
+      :fetch-suggestions="queryAsync"
+      :debounce="1000"
+      :trigger-on-focus="false"
+      v-model="query"
+      @focus="autocompleteInputFocus"
+      @blur="autocompleteInputBlur"
+    >
+      <el-button slot="append" icon="el-icon-setting" @click="settingHandler" />
+    </el-autocomplete>
     <setting-dialog />
   </div>
 </template>
@@ -61,7 +59,7 @@ export default {
     },
     currentQuery () {
       // 查询是否存在
-      let queryConfig = this.queryConfigList.find(queryConfig => {
+      let queryConfig = this.queryConfigList.find((queryConfig) => {
         return queryConfig.queryHeader === this.shortQueryHeader
       })
       return queryConfig
@@ -70,7 +68,7 @@ export default {
       // 查询头(完整)
       return this.currentQuery && this.currentQuery.type
     },
-    settingDialogVisibl () {
+    settingDialogVisible () {
       return this.$store.state.DialogState.settingDialog
     }
   },

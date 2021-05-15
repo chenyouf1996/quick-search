@@ -13,7 +13,8 @@ const MainEvents = {
   DOCK_MENU: 'dockMenu',
   WINDOW_SHOW: 'windowShow',
   WINDOW_HIDE: 'windowHide',
-  WINDOW_CENTER: 'windowCenter'
+  WINDOW_CENTER: 'windowCenter',
+  SHORTCUT: 'shortcut'
 }
 EnumUtils.wrap(MainEvents, ProcessTypes.MAIN)
 

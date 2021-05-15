@@ -1,8 +1,7 @@
 import MainEvents from 'general/enum/MainEvents'
 
 let list = [
-  ['alt+q', MainEvents.WINDOW_SHOW],
-  ['alt+e', MainEvents.WINDOW_HIDE]
+  ['ctrl+alt+p', MainEvents.SHORTCUT]
 ]
 
 let configShortcut = new Map(list)

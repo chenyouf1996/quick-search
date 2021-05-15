@@ -185,7 +185,7 @@ class WindowHelper extends BaseHelper {
         width: 400,
         height: 400,
         useContentSize: true,
-        show: ISO.isDebug,
+        show: false,
         x: 0,
         y: 0,
         webPreferences: {nodeIntegration: true}}
