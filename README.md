@@ -18,4 +18,4 @@ yarn run dev
 
 yarn run build
 
-### 开发后发现windows已经有更好用的类似工具utools
+windows下已经有更好用的类似工具utools
