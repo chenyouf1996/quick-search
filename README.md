@@ -17,3 +17,5 @@ yarn run dev
 ## 构建项目
 
 yarn run build
+
+### 开发后发现windows已经有更好用的类似工具utools
