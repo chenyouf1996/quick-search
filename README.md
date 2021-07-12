@@ -17,5 +17,3 @@ yarn run dev
 ## 构建项目
 
 yarn run build
-
-windows下已经有更好用的类似工具utools
